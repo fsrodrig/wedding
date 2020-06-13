@@ -14,7 +14,14 @@
       "firebase.json",
       "**/.*",
       "**/node_modules/**"
-    ]
+    ],
+    "rewrites": [ {
+      "source": "**",
+      "destination": "/index.html"
+    }, {
+      "source": "!/@(js|css)/**",
+      "destination": "/index.html"
+    } ]
   },
   "storage": {
     "rules": "storage.rules"
