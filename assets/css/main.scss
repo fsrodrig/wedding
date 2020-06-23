@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Norican&display=swap');
+
+
+// Variables
+$dark-green: #012D04;
+
+body,
+html {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.logo-container {
+    position: relative;
+    z-index: 1;
+    top: 250px;
+    text-align: center;
+    width: 100%;
+}
+
+#logo {
+    max-width: 80%;
+    animation: fill 0.5s ease forwards 3.6s;
+}
+
+#logo .path-1 {
+    stroke-dasharray: 467px;
+    stroke-dashoffset: 467px;
+    animation: line-amimation 2s ease forwards;
+}
+
+#logo .path-2 {
+    stroke-dasharray: 250px;
+    stroke-dashoffset: 250px;
+    animation: line-amimation 2s ease forwards 0.2s;
+}
+
+#logo .path-3 {
+    stroke-dasharray: 341px;
+    stroke-dashoffset: 341px;
+    animation: line-amimation 2s ease forwards 0.4s;
+}
+
+#logo .path-4 {
+    stroke-dasharray: 250px;
+    stroke-dashoffset: 250px;
+    animation: line-amimation 2s ease forwards 0.6s;
+}
+
+#logo .path-5 {
+    stroke-dasharray: 530px;
+    stroke-dashoffset: 530px;
+    animation: line-amimation 2s ease forwards 0.8s;
+}
+
+#logo .path-6 {
+    stroke-dasharray: 582px;
+    stroke-dashoffset: 582px;
+    animation: line-amimation 2s ease forwards 1s;
+}
+
+#logo .path-7 {
+    stroke-dasharray: 250px;
+    stroke-dashoffset: 250px;
+    animation: line-amimation 2s ease forwards 1.2s;
+}
+
+#logo .path-8 {
+    stroke-dasharray: 270px;
+    stroke-dashoffset: 270px;
+    animation: line-amimation 2s ease forwards 1.4s;
+}
+
+#logo .path-9 {
+    stroke-dasharray: 270px;
+    stroke-dashoffset: 270px;
+    animation: line-amimation 2s ease forwards 1.6s;
+}
+
+@keyframes line-amimation {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fill {
+    from {
+        fill: transparent;
+    }
+
+    to {
+        fill: black;
+    }
+}
+
+h2 {
+    font-family: 'Amatic SC', cursive;
+    font-size: 5em;
+    font-weight: bold;
+
+}
+
+h3 {
+    font-family: 'Amatic SC', cursive;
+    font-weight: bold;
+}
+
+.font-weight-500 {
+    font-weight: 500;
+    font-size: 2em;
+}
+
+.font-weight-600 {
+    font-weight: 600;
+    font-size: 2em;
+}
+
+#heart {
+    background: url(../img/hero.jpeg);
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position-x: center;
+}
+
+#heart img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.wrapper {
+    position: relative;
+    margin-top: 180vh;
+    background: #fff;
+    padding: 100px;
+}
+
+#bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #fff url(../img/heart.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    mix-blend-mode: screen;
+    background-size: 0;
+}
+
+/*Date section*/
+
+.countdown span.label {
+    font-size: .85rem;
+    font-weight: 400;
+    display: block;
+    color: black;
+}
+
+.countdown span.counter {
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1;
+    font-family: 'Norican';
+    color: black;
+}
+
+.countdown-shadow {
+    border-radius: 10px;
+    box-shadow: 0.56rem 0.56rem 0 rgba(0, 0, 0, 0.02);
+}
+
+.card-title {
+    font-weight: bold;
+}
+
+.card-party {
+    background: $dark-green;
+    color: #fff;
+}
+
+.button{
+    background-color: $dark-green;
+    color: #fff;
+    box-shadow: 0 3px 9px 0 #999;
+
+    &:active {
+        box-shadow: 0 1px 5px 0 #666;
+        transform: translateY(4px);
+    }
+}
