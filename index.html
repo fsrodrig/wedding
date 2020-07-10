@@ -543,6 +543,12 @@
                            </div>
                         </div>
                      </div>
+                     <div class="form-group mb-1">
+                        <label>Qué canción NO PUEDE FALTAR? <span class="opacity-8">(opcional)</span>
+                           <button id="addSong" class="btn button ml-4" type="button"><i class="fas fa-plus"></i></button>
+                        </label>
+                     </div>
+                     <div id="songs"></div>
                      <div class="form-group">
                         <label>Observaciones</label>
                         <textarea name="comments" id="comments" class="form-control form-control-md"
@@ -574,6 +580,9 @@
    <script defer src="/__/firebase/7.15.1/firebase-storage.js"></script>
    <!-- initialize the SDK after all desired features are loaded -->
    <script defer src="/__/firebase/init.js"></script>
+
+   <script defer src="assets/js/sweetalert.min.js"></script>
+   <script defer src="assets/js/form.js"></script>
 
 </body>
 

@@ -15,6 +15,45 @@ body {
   padding: 0;
 }
 
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: #F5F5F5;
+}
+
+body::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #535d3c;
+}
+
+h2 {
+  font-family: 'Amatic SC', cursive;
+  font-size: 5em;
+  font-weight: bold;
+}
+
+h3 {
+  font-family: 'Amatic SC', cursive;
+  font-weight: bold;
+}
+
+h5 {
+  font-weight: 600;
+}
+
+strong {
+  font-family: 'Amatic SC', cursive;
+  font-weight: bold;
+}
+
 .text-primary {
   color: #535d3c !important;
 }
@@ -37,6 +76,23 @@ body {
 
 .large {
   font-size: x-large;
+}
+
+.font-weight-500 {
+  font-weight: 500;
+  font-size: 2em;
+}
+
+.font-weight-600 {
+  font-weight: 600;
+  font-size: 2em;
+}
+
+.wrapper {
+  position: relative;
+  margin-top: 180vh;
+  background: #fff;
+  padding: 20px;
 }
 
 img {
@@ -155,31 +211,6 @@ svg:not(:root) {
   }
 }
 
-h2 {
-  font-family: 'Amatic SC', cursive;
-  font-size: 5em;
-  font-weight: bold;
-}
-
-h3 {
-  font-family: 'Amatic SC', cursive;
-  font-weight: bold;
-}
-
-h5 {
-  font-weight: 600;
-}
-
-.font-weight-500 {
-  font-weight: 500;
-  font-size: 2em;
-}
-
-.font-weight-600 {
-  font-weight: 600;
-  font-size: 2em;
-}
-
 #heart {
   background: url(../img/hero.jpeg);
   height: 100vh;
@@ -200,13 +231,6 @@ h5 {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-}
-
-.wrapper {
-  position: relative;
-  margin-top: 180vh;
-  background: #fff;
-  padding: 20px;
 }
 
 #bg {
@@ -284,6 +308,7 @@ h5 {
           transform: translateY(3px) translateX(3px);
 }
 
+/* End of Date section */
 /*Story section*/
 #story {
   margin-top: 20vh;
@@ -384,6 +409,53 @@ h5 {
 }
 
 /*End story section*/
+#gift {
+  margin-top: 8rem;
+}
+
+#gift #bank {
+  padding-left: 100px;
+  padding-right: 150px;
+}
+
+#gift #bank i {
+  color: #b88e52;
+}
+
+#gift #bank p {
+  font-size: x-large;
+  margin-top: 15px;
+}
+
+#gift #bank p strong {
+  font-size: xx-large;
+}
+
+#gift #instagram {
+  margin-top: 25rem;
+}
+
+#gift #instagram i {
+  color: #535d3c;
+}
+
+#gift #instagram p {
+  font-size: x-large;
+  margin-top: 15px;
+}
+
+#gift #instagram b {
+  font-size: xx-large;
+}
+
+#gift #instagram .container {
+  padding: 20px 300px;
+}
+
+#rsvp {
+  margin-top: 8rem;
+}
+
 /*Mediaqueries*/
 .btn-navbar-toggler {
   margin-top: 1.375rem;
@@ -430,9 +502,6 @@ h5 {
     border-radius: 10%;
     max-height: 200px;
     max-width: 300px;
-  }
-  section#gift:after {
-    height: 780px;
   }
   .svg-decoration.bottom-right,
   .svg-decoration.middle-left {

@@ -5,13 +5,42 @@ window.addEventListener('scroll', function () {
     bg.style.backgroundSize = 3 * value + 'px';
 });
 
-const logo = document.querySelectorAll("#logo>path");
-for (let i = 0; i < logo.length; i++) {
-    console.log(`Letter ${i} is ${logo[i].getTotalLength()}`); 
-}
+// JQuery Functions
+! function (a) {
 
-!function(a) {
-    a(".countdown").countdown("2021/02/12 17:00:00").on("update.countdown", function(s) {
+    // COUNTDOWN
+    a(".countdown").countdown("2021/02/12 17:00:00").on("update.countdown", function (s) {
         a(this).html(s.strftime('<div class="col"><div class="card card-body countdown-shadow mb-4 mb-lg-0 p-3"><span class="counter mb-1 ">%D</span> <span class="label">Día%!D</span></div></div> <div class="col"><div class="card card-body countdown-shadow mb-4 mb-lg-0 p-3"><span class="counter mb-1">%H</span> <span class="label">Hora%!H</span></div></div> <div class="col"><div class="card card-body countdown-shadow mb-4 mb-lg-0 p-3"><span class="counter mb-1">%M</span> <span class="label">Minuto%!M</span></div></div> <div class="col"><div class="card card-body countdown-shadow p-3"><span class="counter mb-1">%S</span> <span class="label">Segundo%!S</span></div></div>'))
-    })
+    });
+
+    // ADD SONGS
+    const maxSongs = 4;
+    let cantSongs = 0;
+    a("#addSong").click(function (e) {
+        e.preventDefault();
+        if (cantSongs < maxSongs) {
+            if (cantSongs === 3) {
+                a('#addSong').attr("disabled", true);
+            }
+
+            a('#songs').append(`<div id="added-${cantSongs}" class="row song" style="display: none;">
+        <div class="col-md-6">
+           <div class="form-group">
+              <label>Artista</label>
+              <input name="artist-${cantSongs}" type="text" class="form-control form-control-md" placeholder="Artista">
+           </div>
+        </div>
+        <div class="col-md-6">
+           <div class="form-group">
+              <label>Canción</label>
+              <input name="song-${cantSongs}" type="text" class="form-control form-control-md"
+                 placeholder="Canción">
+           </div>
+        </div>
+     </div>`);
+     
+            a(`#added-${cantSongs}`).slideDown('slow');
+            cantSongs++;
+        }
+    });
 }(jQuery);
