@@ -6,8 +6,8 @@ const hbs = require('nodemailer-express-handlebars');
 admin.initializeApp();
 const db = admin.firestore();
 
-const EMAIL = functions.config().auth.user;
-const PASSWORD = functions.config().auth.pass;
+const EMAIL = functions.config().nodemailer.email;
+const PASSWORD = functions.config().nodemailer.password;
 
 const transporter = nodemailer.createTransport({
     service: 'gmail',

@@ -1,3 +1,6 @@
+// WOW init
+new WOW().init();
+
 // HEART ANIMATION
 let bg = document.querySelector('#bg');
 window.addEventListener('scroll', function () {
