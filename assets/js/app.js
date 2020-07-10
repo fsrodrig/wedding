@@ -38,7 +38,6 @@ window.addEventListener('scroll', function () {
            </div>
         </div>
      </div>`);
-     
             a(`#added-${cantSongs}`).slideDown('slow');
             cantSongs++;
         }

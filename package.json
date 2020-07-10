@@ -1,0 +1,33 @@
+{
+  "name": "wedding",
+  "version": "1.0.0",
+  "description": "Wedding RSVP",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fsrodrig/wedding.git"
+  },
+  "keywords": [
+    "wedding",
+    "rsvp"
+  ],
+  "author": "Federico Rodriguez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fsrodrig/wedding/issues"
+  },
+  "homepage": "https://github.com/fsrodrig/wedding#readme",
+  "devDependencies": {
+    "del": "^5.1.0",
+    "gulp": "^4.0.2",
+    "gulp-babel5": "^5.4.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-uglify": "^3.0.2"
+  }
+}

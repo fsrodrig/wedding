@@ -1,5 +1,4 @@
 const db = firebase.firestore();
-
 const form = document.querySelector('#confirmation-form');
 const button = document.getElementById("confirm-btn");
 
