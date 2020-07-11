@@ -27,8 +27,6 @@ exports.newGuest = functions.firestore.document('guests/{guestId}').onCreate(asy
     // Raw Data
     const guest = guestSnap.data();
 
-    console.log('guest :>> ', guest);
-
     // Fields required validation
     const isValid = guest.name && guest.lastname && guest.comments &&
         guest.adults !== null && guest.children !== null;
@@ -51,6 +49,7 @@ exports.newGuest = functions.firestore.document('guests/{guestId}').onCreate(asy
         extName: '.hbs'
     }));
 
+    const songs = (guest.songs && guest.songs.length > 0) ? guest.songs : undefined;
 
     // Email
     const mailOptions = {
@@ -65,11 +64,12 @@ exports.newGuest = functions.firestore.document('guests/{guestId}').onCreate(asy
             children: guest.children,
             veggie: guest.veggie ? guest.veggie : 0,
             celiaco: guest.celiaco ? guest.celiaco : 0,
-            songs: guest.songs,
+            songs,
             comments: guest.comments
         }
     };
 
+    console.log('mailOptions: ', mailOptions);
     // Send it
     return transporter.sendMail(mailOptions, (err, data) => {
         if (err) {

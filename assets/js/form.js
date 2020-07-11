@@ -16,8 +16,8 @@ form.addEventListener('submit', function (e) {
     const songElements = document.querySelectorAll('.song');
     let songs = [];
     for (let i = 0; i < songElements.length; i++) {
-        const artist = form.artist - [i].value;
-        const song = form.song - [i].value;
+        const artist = form[`artist-${i}`].value;
+        const song = form[`song-${i}`].value;
 
         if (!!artist && !!song) {
             songs.push({
@@ -27,13 +27,16 @@ form.addEventListener('submit', function (e) {
         }
     }
 
+    const veggie = isNaN(form.veggie.value) ? 0 : form.veggie.value;
+    const celiaco = isNaN(form.celiaco.value) ? 0 : form.celiaco.value;
+
     db.collection('guests').add({
             name: form.name.value,
             lastname: form.lastname.value,
             adults: form.adt.value,
             children: form.chd.value,
-            veggie: form.veggie.value,
-            celiaco: form.celiaco.value,
+            veggie,
+            celiaco,
             songs,
             comments: form.comments.value ? form.comments.value : 'Sin comentarios'
         })
