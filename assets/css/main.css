@@ -224,7 +224,7 @@ svg:not(:root) {
 }
 
 #heart img {
-  position: absolute;
+  position: ab lute;
   top: 0;
   left: 0;
   width: 100%;
@@ -431,6 +431,14 @@ svg:not(:root) {
   font-size: xx-large;
 }
 
+#gift #bank .button {
+  background-color: #b88e52;
+}
+
+#gift #bank .button i {
+  color: #fff;
+}
+
 #gift #instagram {
   margin-top: 25rem;
 }
@@ -450,10 +458,16 @@ svg:not(:root) {
 
 #gift #instagram .container {
   padding: 20px 300px;
+  color: #535d3c;
 }
 
 #rsvp {
   margin-top: 8rem;
+}
+
+#ending {
+  margin-top: 8rem;
+  padding: 0 550px;
 }
 
 /*Mediaqueries*/

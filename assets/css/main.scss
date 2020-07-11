@@ -212,7 +212,7 @@ svg:not(:root) {
 }
 
 #heart img {
-    position: absolute;
+    position: ab lute;
     top: 0;
     left: 0;
     width: 100%;
@@ -398,6 +398,13 @@ svg:not(:root) {
                 font-size: xx-large;
             }
         }
+
+        .button {
+            background-color: $dark-wheat;
+            i {
+                color: #fff;
+            }
+        }
     }
 
     #instagram {
@@ -418,6 +425,7 @@ svg:not(:root) {
 
         .container {
             padding: 20px 300px;
+            color: $dark-green;
         }
 
     }
@@ -433,6 +441,14 @@ svg:not(:root) {
 
 // End of RSVP Section
 
+// ending Section
+
+#ending {
+    margin-top: 8rem;
+    padding: 0 550px;
+}
+
+// End of ending Section
 /*Mediaqueries*/
 
 .btn-navbar-toggler {

@@ -69,7 +69,6 @@ exports.newGuest = functions.firestore.document('guests/{guestId}').onCreate(asy
         }
     };
 
-    console.log('mailOptions: ', mailOptions);
     // Send it
     return transporter.sendMail(mailOptions, (err, data) => {
         if (err) {
@@ -81,4 +80,58 @@ exports.newGuest = functions.firestore.document('guests/{guestId}').onCreate(asy
         };
     });
 
+});
+
+exports.notification = functions.firestore.document('gifts/{giftId}').onCreate(async (change, context) => {
+    
+    // Read the gift document
+    const giftSnap = await db.collection('gifts').doc(context.params.giftId).get();
+
+    // Raw Data
+    const gift = giftSnap.data();
+
+    // Fields required validation
+    const isValid = gift.name && gift.email;
+
+    if (!isValid) {
+        return {
+            message: 'Notificación no válida'
+        }
+    }
+
+    // Template
+    transporter.use('compile', hbs({
+        viewEngine: {
+            extName: '.hbs',
+            partialsDir: 'templates',
+            layoutsDir: 'templates',
+            defaultLayout: 'notification.hbs',
+        },
+        viewPath: 'templates',
+        extName: '.hbs'
+    }));
+
+    // Email
+    const mailOptions = {
+        from: EMAIL,
+        to: 'fs.rodriguez91@gmail.com, alfonzodenise@gmail.com',
+        subject: `Fede & Denu - Recibieron un Regalo`,
+        template: 'confirmation',
+        context: {
+            name: gift.name,
+            email: gift.email,
+            comments: gift.comments
+        }
+    };
+
+    // Send it
+    return transporter.sendMail(mailOptions, (err, data) => {
+        if (err) {
+            return err.message;
+        }
+
+        return {
+            message: `Mensaje enviado a ${mailOptions.to}`
+        };
+    });
 });

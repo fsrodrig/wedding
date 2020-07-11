@@ -1,6 +1,9 @@
 const db = firebase.firestore();
-const form = document.querySelector('#confirmation-form');
-const button = document.getElementById("confirm-btn");
+const confirmationForm = document.querySelector('#confirmation-form');
+const confirmationButton = document.getElementById("confirm-btn");
+
+const notificationForm = document.getElementById("notification-form");
+const notificationButton = document.getElementById("notification-btn");
 
 // Firebase Auth
 firebase.auth().signInAnonymously().catch(function (error) {
@@ -9,15 +12,15 @@ firebase.auth().signInAnonymously().catch(function (error) {
 
 // Save guest confirmation
 
-form.addEventListener('submit', function (e) {
+confirmationForm.addEventListener('submit', function (e) {
     e.preventDefault();
-    button.disabled = true;
+    confirmationButton.disabled = true;
 
     const songElements = document.querySelectorAll('.song');
     let songs = [];
     for (let i = 0; i < songElements.length; i++) {
-        const artist = form[`artist-${i}`].value;
-        const song = form[`song-${i}`].value;
+        const artist = confirmationForm[`artist-${i}`].value;
+        const song = confirmationForm[`song-${i}`].value;
 
         if (!!artist && !!song) {
             songs.push({
@@ -27,33 +30,60 @@ form.addEventListener('submit', function (e) {
         }
     }
 
-    const veggie = isNaN(form.veggie.value) ? 0 : form.veggie.value;
-    const celiaco = isNaN(form.celiaco.value) ? 0 : form.celiaco.value;
+    const veggie = isNaN(confirmationForm.veggie.value) ? 0 : confirmationForm.veggie.value;
+    const celiaco = isNaN(confirmationForm.celiaco.value) ? 0 : confirmationForm.celiaco.value;
 
     db.collection('guests').add({
-            name: form.name.value,
-            lastname: form.lastname.value,
-            adults: form.adt.value,
-            children: form.chd.value,
+            name: confirmationForm.name.value,
+            lastname: confirmationForm.lastname.value,
+            adults: confirmationForm.adt.value,
+            children: confirmationForm.chd.value,
             veggie,
             celiaco,
             songs,
-            comments: form.comments.value ? form.comments.value : 'Sin comentarios'
+            comments: confirmationForm.comments.value ? confirmationForm.comments.value : 'Sin comentarios'
         })
         .then(function () {
             let text = "Los esperamos"
-            if (form.adt.value == 1 && form.chd.value == 0) {
+            if (confirmationForm.adt.value == 1 && confirmationForm.chd.value == 0) {
                 text = "Te esperamos"
             }
             swal("Muchas gracias!", text, "success");
-            button.style.backgroundColor = "#28a745"
-            button.style.borderColor = "#28a745"
-            button.textContent = "Gracias por confirmar!"
-            form.reset();
+            confirmationButton.style.backgroundColor = "#28a745"
+            confirmationButton.style.borderColor = "#28a745"
+            confirmationButton.textContent = "Gracias por confirmar!"
+            confirmationForm.reset();
         })
         .catch(function (error) {
             swal("Lo sentimos", "Hubo un error al intentar enviar tu confirmación", "error");
-            button.disabled = false;
+            confirmationButton.disabled = false;
             console.error("Error adding document: ", error);
         });
+});
+
+// Notification Form
+
+notificationForm.addEventListener('submit', function (e) {
+    e.preventDefault();
+    notificationButton.disabled = true;
+
+    db.collection('gifts').add({
+        names: notificationForm.name.value,
+        email: notificationForm.email.value,
+        comments: notificationForm.comments.value
+    })
+    .then(function () {
+        swal("Muchas gracias!", "" , "success");
+        notificationButton.style.backgroundColor = "#28a745"
+        notificationButton.style.borderColor = "#28a745"
+        const icon = document.querySelector('#notificationButton .fa-paper-plane');
+        icon.parentNode.removeChild(icon);
+        notificationButton.textContent = "Gracias!"
+        notificationForm.reset();
+    })
+    .catch(function (error) {
+        swal("Lo sentimos", "Hubo un error al intentar enviar tu mensaje", "error");
+        notificationButton.disabled = false;
+        console.error("Error adding document: ", error);
+    });
 });
