@@ -4,6 +4,7 @@
 
 
 // Variables
+// $dark-green: #413e45;
 $dark-green: #535d3c;
 $dark-wheat: #b88e52;
 $light-wheat: #d6bc81;
@@ -234,6 +235,17 @@ svg:not(:root) {
 // End of Hero
 
 /*Date section*/
+
+#main {
+    .main-section {
+        
+        background: url('../img/olive-green.png') no-repeat;
+        background-size: contain;
+        margin: -20px;
+        padding: 20px;
+
+    }
+}
 
 .countdown span.label {
     font-size: .85rem;

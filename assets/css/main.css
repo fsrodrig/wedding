@@ -245,6 +245,13 @@ svg:not(:root) {
 }
 
 /*Date section*/
+#main .main-section {
+  background: url("../img/olive-green.png") no-repeat;
+  background-size: contain;
+  margin: -20px;
+  padding: 20px;
+}
+
 .countdown span.label {
   font-size: .85rem;
   font-weight: 400;
