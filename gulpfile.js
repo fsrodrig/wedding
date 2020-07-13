@@ -4,7 +4,7 @@ const htmlmin = require('gulp-htmlmin');
 const cleanCss = require('gulp-clean-css');
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
-const babel = require('gulp-babel5');
+const babel = require('gulp-babel');
 
 gulp.task('clean', function () {
     return del(['./public/**/*'], {
@@ -22,6 +22,10 @@ gulp.task('css', function () {
 
 gulp.task('js', function () {
     return gulp.src('assets/js/*.js')
+        .pipe(babel({
+            presets: ['@babel/env']
+        }))
+        .pipe(uglify())
         .pipe(gulp.dest('./public/assets/js'));
 });
 
