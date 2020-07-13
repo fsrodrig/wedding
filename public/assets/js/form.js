@@ -76,7 +76,7 @@ notificationForm.addEventListener('submit', function (e) {
         swal("Muchas gracias!", "" , "success");
         notificationButton.style.backgroundColor = "#28a745"
         notificationButton.style.borderColor = "#28a745"
-        const icon = document.querySelector('#notificationButton .fa-paper-plane');
+        const icon = document.querySelector('#notification-btn .fa-paper-plane');
         icon.parentNode.removeChild(icon);
         notificationButton.textContent = "Gracias!"
         notificationForm.reset();
