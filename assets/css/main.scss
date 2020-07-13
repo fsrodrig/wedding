@@ -123,6 +123,16 @@ svg:not(:root) {
     top: 250px;
     text-align: center;
     width: 100%;
+
+    img {
+        max-width: 20%;
+        margin-top: -10rem;
+        margin-bottom: 1rem;
+    }
+
+    h2 {
+        color: $dark-wheat;
+    }
 }
 
 #logo {
@@ -213,7 +223,7 @@ svg:not(:root) {
 }
 
 #heart img {
-    position: ab lute;
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
@@ -238,11 +248,15 @@ svg:not(:root) {
 
 #main {
     .main-section {
-        
-        background: url('../img/olive-green.png') no-repeat;
-        background-size: contain;
-        margin: -20px;
-        padding: 20px;
+
+        background: url('../img/backgrounds/olive-green-left-corner.png') no-repeat;
+        background-size: 25w;
+        margin: -25px;
+        padding: 0 12vw;
+
+        div h3 {
+            margin-top: 11rem;
+        }
 
     }
 }
@@ -274,11 +288,13 @@ svg:not(:root) {
 .card-party {
     background: $dark-green;
     color: #fff;
+    min-height: 434px;
 }
 
 .card-church {
-    background: $light-wheat;
+    background: $dark-wheat;
     color: #fff;
+    min-height: 434px;
 }
 
 .card {
@@ -309,6 +325,26 @@ svg:not(:root) {
 
 #story {
     margin-top: 20vh;
+
+    img {
+        &.img-right {
+            position: absolute;
+            height: 70vw;
+            width: 20%;
+            margin-top: -10vw;
+            margin-left: 80%;
+        }
+
+        &.img-left {
+            position: absolute;
+            height: 70vw;
+            width: 20%;
+            margin-top: 65vw;
+            margin-right: 80%;
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+        }
+    }
 }
 
 .story {
@@ -394,6 +430,14 @@ svg:not(:root) {
 #gift {
     margin-top: 8rem;
 
+    img {
+        position: absolute;
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        margin-top: -22rem;
+        margin-left: 60%;
+    }
+
     #bank {
         padding-left: 100px;
         padding-right: 150px;
@@ -413,6 +457,7 @@ svg:not(:root) {
 
         .button {
             background-color: $dark-wheat;
+
             i {
                 color: #fff;
             }
@@ -449,6 +494,11 @@ svg:not(:root) {
 
 #rsvp {
     margin-top: 8rem;
+
+    img {
+        margin-top: 10px;
+        max-width: 100%;
+    }
 }
 
 // End of RSVP Section
@@ -457,7 +507,29 @@ svg:not(:root) {
 
 #ending {
     margin-top: 8rem;
-    padding: 0 550px;
+
+    img {
+
+        bottom: 0;
+        position: absolute;
+        width: 30%;
+        margin-top: 20rem;
+
+        &.img-right {
+            margin-left: 70%;
+        }
+
+        &.img-left {
+            -webkit-transform: scaleX(-1);
+            transform: scaleX(-1);
+            margin-left: -20px;
+        }
+    }
+
+    b {
+        color: $dark-wheat;
+        font-size: xx-large;
+    }
 }
 
 // End of ending Section

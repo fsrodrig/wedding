@@ -112,6 +112,16 @@ svg:not(:root) {
   width: 100%;
 }
 
+.logo-container img {
+  max-width: 20%;
+  margin-top: -10rem;
+  margin-bottom: 1rem;
+}
+
+.logo-container h2 {
+  color: #b88e52;
+}
+
 #logo {
   max-width: 80%;
   -webkit-animation: fill 0.5s ease forwards 3.6s;
@@ -224,7 +234,7 @@ svg:not(:root) {
 }
 
 #heart img {
-  position: ab lute;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -246,10 +256,14 @@ svg:not(:root) {
 
 /*Date section*/
 #main .main-section {
-  background: url("../img/olive-green.png") no-repeat;
-  background-size: contain;
-  margin: -20px;
-  padding: 20px;
+  background: url("../img/backgrounds/olive-green-left-corner.png") no-repeat;
+  background-size: 25w;
+  margin: -25px;
+  padding: 0 12vw;
+}
+
+#main .main-section div h3 {
+  margin-top: 11rem;
 }
 
 .countdown span.label {
@@ -280,11 +294,13 @@ svg:not(:root) {
 .card-party {
   background: #535d3c;
   color: #fff;
+  min-height: 434px;
 }
 
 .card-church {
-  background: #d6bc81;
+  background: #b88e52;
   color: #fff;
+  min-height: 434px;
 }
 
 .card {
@@ -319,6 +335,24 @@ svg:not(:root) {
 /*Story section*/
 #story {
   margin-top: 20vh;
+}
+
+#story img.img-right {
+  position: absolute;
+  height: 70vw;
+  width: 20%;
+  margin-top: -10vw;
+  margin-left: 80%;
+}
+
+#story img.img-left {
+  position: absolute;
+  height: 70vw;
+  width: 20%;
+  margin-top: 65vw;
+  margin-right: 80%;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
 }
 
 .story {
@@ -420,6 +454,14 @@ svg:not(:root) {
   margin-top: 8rem;
 }
 
+#gift img {
+  position: absolute;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  margin-top: -22rem;
+  margin-left: 60%;
+}
+
 #gift #bank {
   padding-left: 100px;
   padding-right: 150px;
@@ -472,9 +514,35 @@ svg:not(:root) {
   margin-top: 8rem;
 }
 
+#rsvp img {
+  margin-top: 10px;
+  max-width: 100%;
+}
+
 #ending {
   margin-top: 8rem;
-  padding: 0 550px;
+}
+
+#ending img {
+  bottom: 0;
+  position: absolute;
+  width: 30%;
+  margin-top: 20rem;
+}
+
+#ending img.img-right {
+  margin-left: 70%;
+}
+
+#ending img.img-left {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  margin-left: -20px;
+}
+
+#ending b {
+  color: #b88e52;
+  font-size: xx-large;
 }
 
 /*Mediaqueries*/
