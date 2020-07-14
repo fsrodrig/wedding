@@ -68,7 +68,7 @@ notificationForm.addEventListener('submit', function (e) {
     notificationButton.disabled = true;
 
     db.collection('gifts').add({
-        names: notificationForm.name.value,
+        name: notificationForm.name.value,
         email: notificationForm.email.value,
         comments: notificationForm.comments.value
     })

@@ -69,6 +69,8 @@ exports.newGuest = functions.firestore.document('guests/{guestId}').onCreate(asy
         }
     };
 
+    console.log('mailOptions :>> ', mailOptions);
+
     // Send it
     return transporter.sendMail(mailOptions, (err, data) => {
         if (err) {
@@ -116,13 +118,15 @@ exports.notification = functions.firestore.document('gifts/{giftId}').onCreate(a
         from: EMAIL,
         to: 'fs.rodriguez91@gmail.com, alfonzodenise@gmail.com',
         subject: `Fede & Denu - Recibieron un Regalo`,
-        template: 'confirmation',
+        template: 'notification',
         context: {
             name: gift.name,
             email: gift.email,
             comments: gift.comments
         }
     };
+
+    console.log('mailOptions :>> ', mailOptions);
 
     // Send it
     return transporter.sendMail(mailOptions, (err, data) => {

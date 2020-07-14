@@ -222,7 +222,7 @@ svg:not(:root) {
 }
 
 #heart {
-  background: url(../img/hero.jpeg);
+  background: url(../img/hero.jpg);
   height: 100vh;
   width: 100%;
   top: 0;
@@ -560,10 +560,10 @@ svg:not(:root) {
 
 @media (max-width: 1668px) {
   .story li:nth-child(2n) .col-img {
-    margin-left: 40%;
+    margin-left: 45%;
   }
   .story li .col-img {
-    margin-left: -40%;
+    margin-left: -45%;
   }
   .logo-container img {
     width: 40vw;
@@ -579,6 +579,9 @@ svg:not(:root) {
   }
   .story li .col-img {
     margin-left: -50%;
+  }
+  .card-party {
+    min-height: 493.2px;
   }
 }
 
@@ -630,6 +633,9 @@ svg:not(:root) {
 }
 
 @media (max-width: 991px) {
+  .card-party {
+    min-height: 434px;
+  }
   .story li:nth-child(2n) .col-img {
     margin-left: 80%;
   }
@@ -673,6 +679,12 @@ svg:not(:root) {
     max-height: 36vw;
     max-width: unset;
     margin-top: -7rem;
+  }
+  #heart {
+    background: url(../img/hero-sm.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position-x: center;
   }
   #gift {
     padding: 0 1vw;
