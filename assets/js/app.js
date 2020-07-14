@@ -8,6 +8,15 @@ window.addEventListener('scroll', function () {
 // JQuery Functions
 ! function (a) {
 
+    a(window).bind('scroll', function() {
+        if (a(window).scrollTop() > 30) {
+            a('.down').hide();
+        }
+        else {
+            a('.down').show();
+        }
+   });
+
     // COUNTDOWN
     a(".countdown").countdown("2021/02/12 17:00:00").on("update.countdown", function (s) {
         a(this).html(s.strftime('<div class="col"><div class="card card-body countdown-shadow mb-4 mb-lg-0 p-3"><span class="counter mb-1 ">%D</span> <span class="label">Día%!D</span></div></div> <div class="col"><div class="card card-body countdown-shadow mb-4 mb-lg-0 p-3"><span class="counter mb-1">%H</span> <span class="label">Hora%!H</span></div></div> <div class="col"><div class="card card-body countdown-shadow mb-4 mb-lg-0 p-3"><span class="counter mb-1">%M</span> <span class="label">Minuto%!M</span></div></div> <div class="col"><div class="card card-body countdown-shadow p-3"><span class="counter mb-1">%S</span> <span class="label">Segundo%!S</span></div></div>'))

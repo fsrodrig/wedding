@@ -132,6 +132,16 @@ svg:not(:root) {
     h2 {
         color: $dark-wheat;
     }
+
+    .down {
+
+        margin-top: 10vh;
+
+        i {
+            color: $dark-wheat;
+        }
+
+    }
 }
 
 #logo {
@@ -293,7 +303,6 @@ svg:not(:root) {
 .card-party {
     background: $dark-green;
     color: #fff;
-    min-height: 434px;
 }
 
 .card-church {
@@ -576,10 +585,6 @@ svg:not(:root) {
     .story li .col-img {
         margin-left: -50%;
     }
-
-    .card-party {
-        min-height: 493.2px;
-    }
 }
 
 @media (max-width: 1200px) {
@@ -640,10 +645,6 @@ svg:not(:root) {
 }
 
 @media (max-width: 991px) {
-
-    .card-party {
-        min-height: 434px;
-    }
 
     .story li:nth-child(2n) .col-img {
         margin-left: 80%;
@@ -711,16 +712,17 @@ svg:not(:root) {
     }
 
     #gift {
-        
+
         padding: 0 1vw;
 
         #instagram {
-        margin-top: 4rem;
+            margin-top: 4rem;
 
-        b {
-            font-size: x-large;
+            b {
+                font-size: x-large;
+            }
         }
-    }}
+    }
 }
 
 @media (max-width: 575px) {

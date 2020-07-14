@@ -122,6 +122,14 @@ svg:not(:root) {
   color: #b88e52;
 }
 
+.logo-container .down {
+  margin-top: 10vh;
+}
+
+.logo-container .down i {
+  color: #b88e52;
+}
+
 #logo {
   max-width: 80%;
   -webkit-animation: fill 0.5s ease forwards 3.6s;
@@ -299,7 +307,6 @@ svg:not(:root) {
 .card-party {
   background: #535d3c;
   color: #fff;
-  min-height: 434px;
 }
 
 .card-church {
@@ -580,9 +587,6 @@ svg:not(:root) {
   .story li .col-img {
     margin-left: -50%;
   }
-  .card-party {
-    min-height: 493.2px;
-  }
 }
 
 @media (max-width: 1200px) {
@@ -633,9 +637,6 @@ svg:not(:root) {
 }
 
 @media (max-width: 991px) {
-  .card-party {
-    min-height: 434px;
-  }
   .story li:nth-child(2n) .col-img {
     margin-left: 80%;
   }
