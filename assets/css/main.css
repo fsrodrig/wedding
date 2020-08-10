@@ -10,7 +10,7 @@ html {
 body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -19,12 +19,12 @@ body::-webkit-scrollbar-track {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   border-radius: 10px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 body::-webkit-scrollbar {
   width: 10px;
-  background-color: #F5F5F5;
+  background-color: #f5f5f5;
 }
 
 body::-webkit-scrollbar-thumb {
@@ -35,13 +35,13 @@ body::-webkit-scrollbar-thumb {
 }
 
 h2 {
-  font-family: 'Amatic SC', cursive;
+  font-family: "Amatic SC", cursive;
   font-size: 5em;
   font-weight: bold;
 }
 
 h3 {
-  font-family: 'Amatic SC', cursive;
+  font-family: "Amatic SC", cursive;
   font-weight: bold;
 }
 
@@ -50,7 +50,7 @@ h5 {
 }
 
 strong {
-  font-family: 'Amatic SC', cursive;
+  font-family: "Amatic SC", cursive;
   font-weight: bold;
 }
 
@@ -280,7 +280,7 @@ svg:not(:root) {
 }
 
 .countdown span.label {
-  font-size: .85rem;
+  font-size: 0.85rem;
   font-weight: 400;
   display: block;
   color: black;
@@ -290,7 +290,7 @@ svg:not(:root) {
   font-size: 2rem;
   font-weight: 500;
   line-height: 1;
-  font-family: 'Norican';
+  font-family: "Norican";
   color: black;
 }
 
@@ -442,15 +442,19 @@ svg:not(:root) {
   position: absolute;
 }
 
+.story li:nth-child(2n) img {
+  margin-left: 110%;
+}
+
 .story li:not(:last-child):after {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   top: 4rem;
   width: 2px;
   height: 5rem;
   background: #b88e52;
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .story li:not(:last-child) {
@@ -593,6 +597,9 @@ svg:not(:root) {
   .story li:nth-child(2n) .col-img {
     margin-left: 60%;
   }
+  .story li:nth-child(2n) img {
+    margin-left: 115%;
+  }
   .story li .col-img {
     margin-left: -60%;
   }
@@ -640,6 +647,9 @@ svg:not(:root) {
   .story li:nth-child(2n) .col-img {
     margin-left: 80%;
   }
+  .story li:nth-child(2n) img {
+    margin-left: 140%;
+  }
   .story li .col-img {
     margin-left: -80%;
   }
@@ -664,6 +674,9 @@ svg:not(:root) {
 @media (max-width: 767.98px) {
   .story li:nth-child(2n) .col-img {
     margin-left: 100%;
+  }
+  .story li:nth-child(2n) img {
+    margin-left: 145%;
   }
   .story li .col-img {
     margin-left: -100%;
