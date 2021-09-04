@@ -17,7 +17,7 @@ window.addEventListener("scroll", function () {
 
   // COUNTDOWN
   a(".countdown")
-    .countdown("2021/12/17 17:45:00")
+    .countdown("2021/12/17 17:00:00")
     .on("update.countdown", function (s) {
       a(this).html(
         s.strftime(
